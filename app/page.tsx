@@ -1,7 +1,6 @@
-import { UserButton, useUser } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
-import { redirect, useRouter } from "next/navigation";
-
+import { redirect } from "next/navigation";
 export default async function Home() {
   const { userId } = await auth();
 
@@ -10,7 +9,10 @@ export default async function Home() {
   }
   return (
     <div className="w-full flex items-center justify-center">
-      <UserButton showName />
+      <UserButton
+        showName
+
+      />
     </div>
   );
 }
